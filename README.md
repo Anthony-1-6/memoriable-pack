@@ -1,2 +1,1 @@
-# memoriable-pack
-A Memoriable Repository
+Se vc está lendo esse arquivo, parabéns, aproveite esse repositório git!!!
