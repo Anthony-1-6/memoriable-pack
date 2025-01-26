@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor de HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 80%;
+            height: 200px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+        }
+        iframe {
+            width: 80%;
+            height: 400px;
+            border: 1px solid #ccc;
+            background-color: white;
+        }
+        .container {
+            text-align: center;
+            width: 100%;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: 3px solid blue;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+          border-widht: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Leitor de HTML em Tempo Real</h1>
+        <textarea id="htmlInput" placeholder="Digite ou cole seu código HTML aqui..."></textarea>
+        <br>
+        <button onclick="renderHTML()">Renderizar</button>
+        <iframe id="output"></iframe>
+    </div>
+
+    <script>
+        function renderHTML() {
+            const htmlCode = document.getElementById('htmlInput').value;
+            const iframe = document.getElementById('output').contentWindow.document;
+            iframe.open();
+            iframe.write(htmlCode);
+            iframe.close();
+        }
+    </script>
+</body>
+</html>
